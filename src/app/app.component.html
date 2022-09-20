@@ -1,0 +1,9 @@
+<h2>Ingé Calc</h2>
+<form [formGroup]="paramsFormGroup">
+  <ul>
+    <li *ngFor="let prop of properties | keyvalue">
+      <label [ngClass]="{'calculated': isDependent(prop.key)}">{{ prop.key }}</label>      
+      <input [ngClass]="{'calculated': isDependent(prop.key)}" type="number" formControlName="{{ prop.key }}" />
+    </li>
+  </ul>
+</form>
